@@ -1,0 +1,71 @@
+<!DOCTYPE html >
+< html  lang =" es " >
+< cabeza >
+    < meta  juego de caracteres =" UTF-8 " >
+    < meta  nombre =" ventana gráfica " contenido =" ancho = ancho del dispositivo, escala inicial = 1,0 " >
+    < título > Calculadora Básica </ título >
+<estilo>​​
+    cuerpo {
+        familia de fuentes: Arial, sans-serif;
+        alineación de texto: centro;  
+    }
+    .calculadora {
+        ancho: 300px;
+        margen: 50px automático;
+        relleno: 20px;
+        borde: 1px sólido #ccc;
+        radio del borde: 5px;
+        color de fondo: #f9f9f9;
+    }
+    entrada[tipo="botón"] {
+    ancho: 60px;
+    altura: 60 píxeles;
+    tamaño de fuente: 20px;
+    margen: 5px;
+    }
+ </estilo>​​
+</cabeza>​​
+</cuerpo>​​
+   < div  clase =" Calculadora " >
+    < tipo de entrada  =" texto " id =" pantalla " solo lectura >
+    < br >
+    < tipo de entrada  =" botón " valor =" 7 " onclick =" addToDisplay(`7`) " >
+    < tipo de entrada  =" botón " valor =" 8 " onclick =" addToDisplay(`8`) " >
+    < tipo de entrada  =" botón " valor =" 9 " onclick =" addToDisplay(`9`) " >
+    < tipo de entrada  =" botón " valor =" / " onclick =" addToDisplay(`/`) " >
+    < br >
+    < tipo de entrada  =" botón " valor =" 4 " onclick =" addToDisplay(`4`) " >
+    < tipo de entrada  =" botón " valor =" 5 " onclick =" addToDisplay(`5`) " >
+    < tipo de entrada  =" botón " valor =" 6 " onclick =" addToDisplay(`6`) " >
+    < tipo de entrada  =" botón " valor =" * " onclick =" addToDisplay(`*`) " >
+    < br >
+    < tipo de entrada  =" botón " valor =" 1 " onclick =" addToDisplay(`1`) " >
+    < tipo de entrada  =" botón " valor =" 2 " onclick =" addToDisplay(`2`) " >
+    < tipo de entrada  =" botón " valor =" 3 " onclick =" addToDisplay(`3`) " >
+    < tipo de entrada  =" botón " valor =" - " onclick =" addToDisplay(`-`) " >
+    < br >
+    < tipo de entrada  =" botón " valor =" 0 " onclick =" addToDisplay(`0`) " >
+    < tipo de entrada  =" botón " valor =" . " onclick =" addToDisplay(`.`) " >
+    < tipo de entrada  =" botón " valor =" = " onclick =" addToDisplay() " >
+    < tipo de entrada  =" botón " valor =" + " onclick =" addToDisplay(`+`) " >
+    < br >
+    < tipo de entrada  =" botón " valor =" C " onclick =" clearDisplay() " >
+   </div>​​
+   < guión >
+       función  agregarADisplay ( valor )  {
+         documento . getElementById ( `pantalla` ) . valor  +=  valor ;
+       }
+
+       función  Calcular  ( )  {
+           var  expresión  =  documento . getElementById ( `pantalla` ) . valor ;
+           // la funcion eval toma la cadena de expresión y la ejecuta como si fuera JavaScript
+           var  resultado  =  eval ( expresión ) ;
+           documento . getElementById ( `pantalla` ) . valor  =  resultado ;
+       }
+
+        función  borrar pantalla ( )  {
+            documento . getElementById ( `pantalla` ) . valor  =  `` ;
+       }
+   </ guión >
+</cuerpo>​​
+</html>
